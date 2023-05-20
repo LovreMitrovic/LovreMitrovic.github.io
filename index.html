@@ -14,11 +14,16 @@
         link.addEventListener('click', (e) => {
           e.preventDefault();
           const targetId = link.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+          if (targetId[0] != '#'){
+            window.location.href = targetId;
+          }
+          else {
+            const targetElement = document.querySelector(targetId);
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          };
         });
       });
     });
@@ -137,12 +142,12 @@
         <li class="hide-on-mobile"><a href="#education">Obrazovanje</a></li>
         <li class="hide-on-mobile"><a href="#projects">Projekti</a></li>
         <li class="hide-on-mobile"><a href="#publications">Radovi</a></li>
-        <li><a href="https://github.com/LovreMitrovic">
+        <li><a href="https://github.com/LovreMitrovic" target="_blank">
         	<ion-item>
         		<ion-icon size="large" name="logo-github"></ion-icon>
         	</ion-item>
         </a></li>
-        <li><a href="https://www.linkedin.com/in/lovre-mitrovi%C4%87-354124265/">
+        <li><a href="https://www.linkedin.com/in/lovre-mitrovi%C4%87-354124265/" target="_blank">
         	<ion-item>
         		<ion-icon size="large" name="logo-linkedin"></ion-icon>
         	</ion-item>
