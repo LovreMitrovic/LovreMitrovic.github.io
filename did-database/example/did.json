@@ -1,0 +1,18 @@
+"@context": [
+    "https://www.w3.org/ns/did/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
+  ]
+
+  "id": "did:example:abc123",
+  
+  "verificationMethod": [{
+    "id": "did:example:abc123#sGCDSbTRsYrZQDfaZ8M4SNCJox8_w5-Pi8oVadExnY4",
+    "type": "JsonWebKey2020", 
+    "controller": "did:example:abc123",
+    "publicKeyJwk": {
+      "crv": "Ed25519", 
+      "kty": "OKP", 
+      "x": "PMpO4J4AQmsBNvyaVV_XReaOOyKJHRks8qEeM8zc2hQ", 
+      "kid": "sGCDSbTRsYrZQDfaZ8M4SNCJox8_w5-Pi8oVadExnY4" 
+    }
+  }]
