@@ -1,0 +1,20 @@
+{
+    "@context": [
+        "https://www.w3.org/ns/did/v1",
+        "https://w3id.org/security/suites/jws-2020/v1"
+    ],
+    "id": "did:web:about.lovremitrovic.me:did-database:example",
+    "verificationMethod": [
+        {
+            "id": "did:web:about.lovremitrovic.me:did-database:example",
+            "type": "JsonWebKey2020",
+            "controller": "did:web:about.lovremitrovic.me:did-database:example",
+            "publicKeyJwk": {
+                "kty": "EC",
+                "x": "Y4jqW7z7j5nFHxV0BuFAwkmOeNDtWs0PrlX2H8P3JaI",
+                "y": "ib6z7W1xFKjH513msz8i4AdLrGTjyneUAwX0zGEfxO8",
+                "crv": "P-256"
+              }
+        }
+    ]
+}
