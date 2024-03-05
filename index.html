@@ -14,11 +14,11 @@
     <header>
       <img src="profile.png" alt="Your Photo">
       <h1>Lovre Mitrović</h1>
+      <p>Dostupan na <a href= "mailto: lovre.mitrovic@fer.hr">lovre.mitrovic@fer.hr</a></p>
     </header>
 
     <nav>
       <ul>
-        <li class="hide-on-mobile"><a href="#contact">Kontakt</a></li>
         <li class="hide-on-mobile"><a href="#education">Obrazovanje</a></li>
         <li class="hide-on-mobile"><a href="#projects">Projekti</a></li>
         <li class="hide-on-mobile"><a href="#publications">Radovi</a></li>
@@ -37,30 +37,25 @@
     </nav>
 
     <main>
-      <section id="contact">
-        <h2>Kontakt</h2>
-        <p>Kontaktirajte emailom na <a href= "mailto: lovre.mitrovic@fer.hr">lovre.mitrovic@fer.hr</a></p>
-      </section>
-
-      <section id="education">
+      <article id="education">
         <h2>Obrazovanje</h2>
-        <article>
+        <section>
           <h3>Fakultet elektrotehnike i računarstva Sveučilišta u Zagrebu</h3>
           <p>Magistar inženjer računarstva</p>
           <p>Smjer: računalna znanost</p>
           <p>U tijeku od 09/2022</p>
-        </article>
-        <article>
+        </section>
+        <section>
           <h3>Fakultet elektrotehnike i računarstva Sveučilišta u Zagrebu</h3>
           <p>Sveučilišni prvostupnik inženjer računarstva</p>
           <p>Smjer: računarstvo</p>
           <p>08/2019 – 08/2022</p>
-        </article>
-      </section>
+        </section>
+      </article>
 
-      <section id="projects">
+      <article id="projects">
         <h2>Projekti</h2>
-        <article>
+        <section>
           <h3>Web aplikacija ParkShare</h3>
           <p>Web aplikacija za rezervaciju parkinga izrađena u timu od 7 ljudi koristeći
              SpringBoot i React u sklopu kolegija programsko inžinjerstvo. Aplikacija 
@@ -68,10 +63,10 @@
               dodavanja parkirnih mjesta na karti, postavljanja cijene i slično te korisnici
                koji imaju mogućnost rezervacije i zauzimanja parkinga.</p>
           <p><a href="https://gitlab.com/majstorisamora">Link na kod</a></p>
-        </article>
+        </section>
 
-        <article>
-          <h2>Calories tracker (web2-lab6)</h2>
+        <section>
+          <h3>Calories tracker (web2-lab6)</h3>
           <p>Web aplikacija izrađena samostalno koristći Vue razvojni okvir u 
             sklopu kolegija napredni razvoj programske potpore za web.
             Svrha izrade je prezentacija poznavanja osnova Vue okvira i SPA.
@@ -79,19 +74,19 @@
           </p>
           <p><a href="https://github.com/LovreMitrovic/web2-lab6">Link na kod</a></p>
           <p><a href="https://web2-lab6-q23z.onrender.com/">Live aplikacija</a></p>
-        </article>
+        </section>
 
-        <article>
-          <h2>PWA Photo Publisher (web2-lab5)</h2>
+        <section>
+          <h3>PWA Photo Publisher (web2-lab5)</h3>
           <p>PWA izgrađen samostalno u 
             sklopu kolegija napredni razvoj programske potpore za web.
             U izradi su korišteni IndexDB, service worker i push notifikacije
             te su korištene strategije keširanja.</p>
             <p><a href="https://github.com/LovreMitrovic/web2-lab5">Link na kod</a></p>
-        </article>
+        </section>
 
-        <article>
-          <h2>Asteroids game (web2-lab3)</h2>
+        <section>
+          <h3>Asteroids game (web2-lab3)</h3>
           <p>Samostalna implementacija popularne igre Asteroids u vanilla JS u sklopu
             kolegija napredni razvoj programske potpore za web. Svrha izrade je prezentacija
             poznavanja naprednijeg JavaScripta. Korisnik upravlja raketom i izbjegava asteroida.
@@ -100,10 +95,10 @@
           </p>
           <p><a href="https://github.com/LovreMitrovic/web2-lab3">Link na kod</a></p>
           <p><a href="https://web2-lab3-gaod.onrender.com/">Live aplikacija</a></p>
-        </article>
+        </section>
 
-        <article>
-          <h2>Vulnerable website (web2-lab2)</h2>
+        <section>
+          <h3>Vulnerable website (web2-lab2)</h3>
           <p> U aplikaciji je moguće uključiti/isključiti ranjivost te tako isprobati 
             popularne ranjivosti u web aplikacijama. Na raspolaganju su 
             reflektirani XSS i loša kontrola pristupa. Detaljniji opis je 
@@ -112,10 +107,10 @@
           </p>
           <p><a href="https://github.com/LovreMitrovic/web2-lab2">Link na kod</a></p>
           <p><a href="https://web2-lab2-mck1.onrender.com/">Live aplikacija</a></p>
-        </article>
+        </section>
 
-        <article>
-          <h2>Competition tracking App (web2-lab1)</h2>
+        <section>
+          <h3>Competition tracking App (web2-lab1)</h3>
           <p>Aplikacija je izrađena samostalno koristeći vanilla JS u sklopu
             kolegija napredni razvoj programske potpore za web. Aplikacija ima mogućnost
             login i registracije korisnika koristeći Auth0. Registrirani korisnik
@@ -123,38 +118,38 @@
             kojih je vlasnik dok gost može samo pregledavati rezultate.
           </p>
           <p><a href="https://github.com/LovreMitrovic/web2-lab1">Link na kod</a></p>
-        </article>
+        </section>
         
-        <article>
+        <section>
           <h3>Audite - sustav za preporučivanje glazbe</h3>
           <p>Web aplikacija koja sadržava pregled glazbe i personalizirani preporučitelj
             za glazbu povezan s Facebook računom. Korištene tehnologije su ReactJs, ExpressJs i Neo4j. 
             Aplikacija je napravljena u timu od 3 ljudi u sklopu kolegija društvene mreže.</p>
           <p><a href="https://github.com/LovreMitrovic/audite">Link na backend kod</a></p>
           <p><a href="https://github.com/vmagjer/drumre-projekt">Link na frontend kod</a></p>
-        </article>
+        </section>
 
-        <article>
+        <section>
          
           <h3>Protfolio tracker</h3>
           <p>Portfolio tracker koja dohvaća trenutne cijene i prikazuje stanje portfolija.
             Aplikacija je napravljena iOS platformu koristeći programski jezik Swift izrađena 
             je u timu od 2 ljudi u sklopu vještine razvoj usluga i aplikacija za operacijski sustav iOS.</p>
           <p><a href="https://github.com/LovreMitrovic/iOS-Vjestina-SimplePortfolio">Link na kod</a></p>
-        </article>
+        </section>
 
-        <article>
+        <section>
           <h3>Raspodijeljeni trezor ključeva</h3>
           <p>Aplikacija u Pythonu i C++ za demonstraciju koncepta trezora raspodijeljenih kriptografskih
             ključeva izrađena u timu od 4 ljudi u sklopu kolegija projekt R.
           </p>
           <p><a href="https://gitlab.com/projektr-grupa50/Trezor">Link na kod</a></p>
-        </article>
-      </section>
+        </section>
+      </article>
 
-      <section id="publications">
+      <article id="publications">
         <h2>Radovi</h2>
-        <article>
+        <section>
           <h3>Završni rad: Sigurnosne ranjivosti u pametnim ugovorima</h3>
           <p>Rad obrađuje
               nekolicinu odabranih ranjivosti u implementaciji pametnih ugovora 
@@ -166,9 +161,9 @@
               nadogradnja. Na kraju se predlažu dobre prakse za dobivanje slučajnih brojeva.
           </p>
           <p><a href="/publications/zavrad-sigurnost-pametni-ugovori.pdf">Pročitaj</a></p>
-        </article>
+        </section>
 
-        <article>
+        <section>
           <h3>Seminar: Sigurnosni izazovi u ostvarivanju
 interneta stvari</h3>
           <p>Razmatraju se predložene definicije interneta stvari te se daje kratki uvod u primjenu.
@@ -180,8 +175,8 @@ interneta stvari</h3>
               usprkos zaštitnim mjerama.
           </p>
           <p><a href="/publications/sem2-sigurnost-iot.pdf">Pročitaj</a></p>
-        </article>
-      </section>
+        </section>
+      </article>
     </main>
 
     <footer>
