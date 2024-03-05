@@ -4,129 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lovre Mitrović</title>
+  <link rel="stylesheet" href="/index.css">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>	
-    <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      // Smooth scrolling functionality
-      const navLinks = document.querySelectorAll('nav ul li a');
-      navLinks.forEach((link) => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetId = link.getAttribute('href');
-          if (targetId[0] != '#'){
-            window.location.href = targetId;
-          }
-          else {
-            const targetElement = document.querySelector(targetId);
-            targetElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          };
-        });
-      });
-    });
-  </script>
-  <style>
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f2f2f2;
-    }
-    
-    .hide-on-mobile{
-      display: none;
-    }
-    
-    @media only screen and (min-width: 600px) {
-    .container {
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      margin: 20px auto;
-    }
-    
-    .hide-on-mobile{
-      display: inline
-    }
-    }
-     
-    .container {
-      background-color: #ffcc80;
-      padding: 20px;
-    }
-    
-    header {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    header img {
-      border-radius: 20%;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      object-position: center;
-      border: 5px solid #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    nav {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    nav ul li {
-      display: inline-block;
-      margin: 0 10px;
-      vertical-align: middle;
-    }
-    nav ul li a {
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    main {
-      margin-bottom: 20px;
-    }
-    h2 {
-      color: #333;
-    }
-    p {
-      color: #555;
-    }
-    .section {
-      background-color: #f2f2f2;
-      border-radius: 10px;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-    .card {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-    .card h3 {
-      margin-bottom: 5px;
-    }
-    .card p {
-      margin-top: 0;
-    }
-    .card a {
-      color: #555;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      color: #fff;
-      margin-top: 20px;
-    }
-  </style>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>	
+  <script src="/index.js"></script>
 </head>
 <body>
   <div class="container">
@@ -137,7 +18,6 @@
 
     <nav>
       <ul>
-        <!--<li class="hide-on-mobile"><a href="#about">O meni</a></li>-->
         <li class="hide-on-mobile"><a href="#contact">Kontakt</a></li>
         <li class="hide-on-mobile"><a href="#education">Obrazovanje</a></li>
         <li class="hide-on-mobile"><a href="#projects">Projekti</a></li>
@@ -157,87 +37,151 @@
     </nav>
 
     <main>
-      <!--<div class="section" id="about">
-        <h2>O meni</h2>
-        <p></p>
-      </div>-->
-      
-      <div class="section" id="contact">
+      <section id="contact">
         <h2>Kontakt</h2>
         <p>Kontaktirajte emailom na <a href= "mailto: lovre.mitrovic@fer.hr">lovre.mitrovic@fer.hr</a></p>
-      </div>
+      </section>
 
-      <div class="section" id="education">
+      <section id="education">
         <h2>Obrazovanje</h2>
-        <div class="card">
+        <article>
           <h3>Fakultet elektrotehnike i računarstva Sveučilišta u Zagrebu</h3>
-          <p>Smjer: računalna znanost</p>
           <p>Magistar inženjer računarstva</p>
-          <p>U tijeku</p>
-        </div>
-        <div class="card">
+          <p>Smjer: računalna znanost</p>
+          <p>U tijeku od 09/2022</p>
+        </article>
+        <article>
           <h3>Fakultet elektrotehnike i računarstva Sveučilišta u Zagrebu</h3>
           <p>Sveučilišni prvostupnik inženjer računarstva</p>
           <p>Smjer: računarstvo</p>
           <p>08/2019 – 08/2022</p>
-        </div>
-      </div>
+        </article>
+      </section>
 
-      <div class="section" id="projects">
+      <section id="projects">
         <h2>Projekti</h2>
-        <div class="card">
+        <article>
           <h3>Web aplikacija ParkShare</h3>
-          <p>Web aplikacija za rezervaciju parkinga izrađena u timu od 7 ljudi koristeći SpringBoot i React u sklopu kolegija programsko inžinjerstvo. Aplikacija razlikuje dvije vrste korisnika ,a to su voditelj parkinga koji imaju mogućnost dodavanja parkirnih mjesta na karti, postavljanja cijene i slično te korisnici koji imaju mogućnost rezervacije i zauzimanja parkinga.</p>
+          <p>Web aplikacija za rezervaciju parkinga izrađena u timu od 7 ljudi koristeći
+             SpringBoot i React u sklopu kolegija programsko inžinjerstvo. Aplikacija 
+             razlikuje dvije vrste korisnika ,a to su voditelj parkinga koji imaju mogućnost
+              dodavanja parkirnih mjesta na karti, postavljanja cijene i slično te korisnici
+               koji imaju mogućnost rezervacije i zauzimanja parkinga.</p>
           <p><a href="https://gitlab.com/majstorisamora">Link na kod</a></p>
-        </div>
+        </article>
+
+        <article>
+          <h2>Calories tracker (web2-lab6)</h2>
+          <p>Web aplikacija izrađena samostalno koristći Vue razvojni okvir u 
+            sklopu kolegija napredni razvoj programske potpore za web.
+            Svrha izrade je prezentacija poznavanja osnova Vue okvira i SPA.
+            Korisnik aplikacije ima mogućnost praćenja potrošnje kalorija.
+          </p>
+          <p><a href="https://github.com/LovreMitrovic/web2-lab6">Link na kod</a></p>
+          <p><a href="https://web2-lab6-q23z.onrender.com/">Live aplikacija</a></p>
+        </article>
+
+        <article>
+          <h2>PWA Photo Publisher (web2-lab5)</h2>
+          <p>PWA izgrađen samostalno u 
+            sklopu kolegija napredni razvoj programske potpore za web.
+            U izradi su korišteni IndexDB, service worker i push notifikacije
+            te su korištene strategije keširanja.</p>
+            <p><a href="https://github.com/LovreMitrovic/web2-lab5">Link na kod</a></p>
+        </article>
+
+        <article>
+          <h2>Asteroids game (web2-lab3)</h2>
+          <p>Samostalna implementacija popularne igre Asteroids u vanilla JS u sklopu
+            kolegija napredni razvoj programske potpore za web. Svrha izrade je prezentacija
+            poznavanja naprednijeg JavaScripta. Korisnik upravlja raketom i izbjegava asteroida.
+            Korisniku je dostupan leaderboard koji je spremljen lokalno te podešavanje
+            parametara igre prije početka.
+          </p>
+          <p><a href="https://github.com/LovreMitrovic/web2-lab3">Link na kod</a></p>
+          <p><a href="https://web2-lab3-gaod.onrender.com/">Live aplikacija</a></p>
+        </article>
+
+        <article>
+          <h2>Vulnerable website (web2-lab2)</h2>
+          <p> U aplikaciji je moguće uključiti/isključiti ranjivost te tako isprobati 
+            popularne ranjivosti u web aplikacijama. Na raspolaganju su 
+            reflektirani XSS i loša kontrola pristupa. Detaljniji opis je 
+            dostupan na početnoj stranici aplikacije. Aplikacija je izrađena
+            koristeći vanilla JS.
+          </p>
+          <p><a href="https://github.com/LovreMitrovic/web2-lab2">Link na kod</a></p>
+          <p><a href="https://web2-lab2-mck1.onrender.com/">Live aplikacija</a></p>
+        </article>
+
+        <article>
+          <h2>Competition tracking App (web2-lab1)</h2>
+          <p>Aplikacija je izrađena samostalno koristeći vanilla JS u sklopu
+            kolegija napredni razvoj programske potpore za web. Aplikacija ima mogućnost
+            login i registracije korisnika koristeći Auth0. Registrirani korisnik
+            može dodavati natjecanja i mijenjati rezultate natjecanja 
+            kojih je vlasnik dok gost može samo pregledavati rezultate.
+          </p>
+          <p><a href="https://github.com/LovreMitrovic/web2-lab1">Link na kod</a></p>
+        </article>
         
-        <div class="card">
+        <article>
           <h3>Audite - sustav za preporučivanje glazbe</h3>
-          <p>Web aplikacija koja sadržava pregled glazbe i personalizirani preporučitelj za glazbu povezan s Facebook računom. Korištene tehnologije su ReactJs, ExpressJs i Neo4j. Aplikacija je napravljena u timu od 3 ljudi u sklopu kolegija društvene mreže.</p>
+          <p>Web aplikacija koja sadržava pregled glazbe i personalizirani preporučitelj
+            za glazbu povezan s Facebook računom. Korištene tehnologije su ReactJs, ExpressJs i Neo4j. 
+            Aplikacija je napravljena u timu od 3 ljudi u sklopu kolegija društvene mreže.</p>
           <p><a href="https://github.com/LovreMitrovic/audite">Link na backend kod</a></p>
           <p><a href="https://github.com/vmagjer/drumre-projekt">Link na frontend kod</a></p>
-        </div>
+        </article>
 
-        <div class="card">
+        <article>
          
           <h3>Protfolio tracker</h3>
-          <p>Portfolio tracker koja dohvaća trenutne cijene i prikazuje stanje portfolija. Aplikacija je napravljena iOS platformu koristeći programski jezik Swift izrađena je u timu od 2 ljudi u sklopu vještine razvoj usluga i aplikacija za operacijski sustav iOS.</p>
-          <p><a href="
-https://github.com/LovreMitrovic/iOS-Vjestina-SimplePortfolio">Link na kod</a></p>
-        </div>
+          <p>Portfolio tracker koja dohvaća trenutne cijene i prikazuje stanje portfolija.
+            Aplikacija je napravljena iOS platformu koristeći programski jezik Swift izrađena 
+            je u timu od 2 ljudi u sklopu vještine razvoj usluga i aplikacija za operacijski sustav iOS.</p>
+          <p><a href="https://github.com/LovreMitrovic/iOS-Vjestina-SimplePortfolio">Link na kod</a></p>
+        </article>
 
-        <div class="card">
+        <article>
           <h3>Raspodijeljeni trezor ključeva</h3>
-          <p>Aplikacija u Pythonu i C++ za demonstraciju koncepta trezora raspodijeljenih kriptografskih ključeva izrađena u timu od 4 ljudi u sklopu kolegija projekt R.</p>
-          <p><a href="
-https://gitlab.com/projektr-grupa50/Trezor">Link na kod</a></p>
-        </div>
-      </div>
+          <p>Aplikacija u Pythonu i C++ za demonstraciju koncepta trezora raspodijeljenih kriptografskih
+            ključeva izrađena u timu od 4 ljudi u sklopu kolegija projekt R.
+          </p>
+          <p><a href="https://gitlab.com/projektr-grupa50/Trezor">Link na kod</a></p>
+        </article>
+      </section>
 
-      <div class="section" id="publications">
+      <section id="publications">
         <h2>Radovi</h2>
-        <div class="card">
+        <article>
           <h3>Završni rad: Sigurnosne ranjivosti u pametnim ugovorima</h3>
           <p>Rad obrađuje
-nekolicinu odabranih ranjivosti u implementaciji pametnih ugovora
-na platformi Ethereum. Za svaku razrađuje
-uzroke i preventivne tehnike. U nastavku
-analizira problem generiranja slučajnih brojeva i osvrće se na loše prakse u tom procesu. Uz to prezentira rješenje za pronalaženje loših praksi u implementaciji ugovora.
-Navedeno rješenje se potom testira kroz nekolicinu primjera i razmatraju se daljnje
-nadogradnja. Na kraju se predlažu dobre prakse za dobivanje slučajnih brojeva.</p>
+              nekolicinu odabranih ranjivosti u implementaciji pametnih ugovora 
+              na platformi Ethereum. Za svaku razrađuje 
+              uzroke i preventivne tehnike. U nastavku 
+              analizira problem generiranja slučajnih brojeva i osvrće se na loše prakse u tom procesu. 
+              Uz to prezentira rješenje za pronalaženje loših praksi u implementaciji ugovora. 
+              Navedeno rješenje se potom testira kroz nekolicinu primjera i razmatraju se daljnje 
+              nadogradnja. Na kraju se predlažu dobre prakse za dobivanje slučajnih brojeva.
+          </p>
           <p><a href="/publications/zavrad-sigurnost-pametni-ugovori.pdf">Pročitaj</a></p>
-        </div>
+        </article>
 
-        <div class="card">
+        <article>
           <h3>Seminar: Sigurnosni izazovi u ostvarivanju
 interneta stvari</h3>
           <p>Razmatraju se predložene definicije interneta stvari te se daje kratki uvod u primjenu.
-Predstavljaju se tehnologije koje se koriste u praksi te se posebna pažnja daje LoRaWAN protokolu koji koristi LoRa tehnologiju. Objašnjava se način prijenosa poruka i aktivacije ured̄aja onako kako ih definira protokol. Razmatraju se potencijalne
-prijetnje sustavu te se obrad̄uju zaštitne mjere koje uvodi protokol kao odgovor na prijetnje. Obrađuje se nekolicina relevantnih ranjivosti koje postoje u dizajnu protokola
-usprkos zaštitnim mjerama.</p>
+              Predstavljaju se tehnologije koje se koriste u praksi te se posebna pažnja daje LoRaWAN protokolu
+              koji koristi LoRa tehnologiju. Objašnjava se način prijenosa poruka i aktivacije ured̄aja onako
+              kako ih definira protokol. Razmatraju se potencijalne
+              prijetnje sustavu te se obrad̄uju zaštitne mjere koje uvodi protokol kao odgovor na prijetnje.
+              Obrađuje se nekolicina relevantnih ranjivosti koje postoje u dizajnu protokola
+              usprkos zaštitnim mjerama.
+          </p>
           <p><a href="/publications/sem2-sigurnost-iot.pdf">Pročitaj</a></p>
-        </div>
-      </div>
+        </article>
+      </section>
     </main>
 
     <footer>
