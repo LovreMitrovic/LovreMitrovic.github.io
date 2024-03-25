@@ -3,12 +3,12 @@
         "https://www.w3.org/ns/did/v1",
         "https://w3id.org/security/suites/jws-2020/v1"
     ],
-    "id": "did:web:about.lovremitrovic.me:did-database:issuer",
+    "id": "did:web:lovremitrovic.github.io:did-database:issuer",
     "verificationMethod": [
         {
-            "id": "did:web:about.lovremitrovic.me:did-database:issuer",
+            "id": "did:web:lovremitrovic.github.io:did-database:issuer",
             "type": "JsonWebKey2020",
-            "controller": "did:web:about.lovremitrovic.me:did-database:issuer",
+            "controller": "did:web:lovremitrovic.github.io:did-database:issuer",
             "publicKeyJwk": {
                 "kty": "EC",
                 "x": "wqXTU3NKOKTxRc-AbM54BDWGwCBCiDaQ_OQvfxq7U6k",
