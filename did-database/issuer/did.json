@@ -10,11 +10,11 @@
             "type": "JsonWebKey2020",
             "controller": "did:web:lovremitrovic.github.io:did-database:issuer",
             "publicKeyJwk": {
-                "kty": "EC",
-                "x": "wqXTU3NKOKTxRc-AbM54BDWGwCBCiDaQ_OQvfxq7U6k",
-                "y": "H6yOlk8aHzprh-UEe8UcI4aoRh8MghwVKGoSu4YhICs",
-                "crv": "P-256"
-              }
+                  "kty": "EC",
+                  "x": "6v0wx7K7CegMKNzggIlkmok7KLgwbxXScI86emXsTH8",
+                  "y": "yPBO_uMtUMLTKkkh7NxcwY3JR_fgE6d2VT1N6cxaRp8",
+                  "crv": "P-256"
+                }
         }
     ]
 }
