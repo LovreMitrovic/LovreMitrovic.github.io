@@ -11,8 +11,8 @@
             "controller": "did:web:lovremitrovic.github.io:did-database:verifier",
             "publicKeyJwk": {
               "kty": "EC",
-              "x": "l2CgzhJCzo9zxYacNW1FZw3BmfD16BtnZpbPGehsgQg",
-              "y": "61uxclt2S7Dqb2CtJjGoDBEXy7wNq0R6mOzRTj1O9IE",
+              "x": "Ka9DEDwNjlgo-GMnAhK4BwDWC5-Mqd5GFK0QRaDE_wA",
+              "y": "XbdNETxysZtUOITsKEaP6woTCL0Tc-1p5Pp6ngnst6s",
               "crv": "P-256"
             }
         }
