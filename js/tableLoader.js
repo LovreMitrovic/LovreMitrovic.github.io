@@ -1,0 +1,81 @@
+/*
+	This script will populate every html table element
+	which has src and id attribute with .csv file
+	provided in src attribute.
+	
+	To use srcipt in head element include following lines
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+	<script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+	
+	And at the end include this script for example
+	<script src="/path/to/script.js"></script>
+	
+	Here is example of working html table element
+	<table src="/path/to/file.csv" id="mytable"></table>
+	
+	@author Lovre Mitrović
+
+*/
+
+async function loadContent(location) {
+	try {
+		const absoluteURL = new URL(location, window.location.href).toString();
+
+		const response = await fetch(absoluteURL);
+		const content = await response.text();
+		return content;
+	} catch (error) {
+		throw new Error('Failed to load content from the web: ' + error.message);
+	}
+}
+
+
+function parseCsv(csv) {
+	const lines = csv.split('\n');
+	const headers = lines[0].split(',');
+
+	const jsonData = [];
+
+	for (let i = 1; i < lines.length; i++) {
+		if(lines[i] == '') continue;
+		const data = lines[i].split(',');
+		const entry = {};
+
+		for (let j = 0; j < headers.length; j++) {
+			entry[headers[j]] = data[j];
+		}
+		jsonData.push(entry);
+	}
+	const columns = headers.map((name) => ({title:name, data:name}))
+	return {
+		data:jsonData,
+		columns
+	}
+  
+}
+
+function populateHtml(){
+	const tables = document.querySelectorAll('table');
+	tables.forEach(async (table) => {
+		console.log(table);
+		if(table.getAttribute('src') === null){
+			return;
+		}
+		if(table.getAttribute('id') === null){
+			alert(`Couldnt load table with src ${table.getAttribute('src')} because it doesnt have id!`);
+			return;
+		}
+		let src = table.getAttribute('src');
+		let id = table.getAttribute('id');
+		let content = await loadContent(src);
+		content = parseCsv(content);
+		let dataTable = new DataTable(`#${id}`,{
+				data: content.data,
+				columns: content.columns
+			}
+		);
+	})
+}
+
+document.addEventListener("DOMContentLoaded", populateHtml)
