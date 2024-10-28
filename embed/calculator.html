@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area units converter</title>
+    <style>
+        /* General styling for the section */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        section {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        section h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Container styling */
+        .container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        /* Form styling */
+        form {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Input container styling */
+        .input-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Input fields */
+        input[type="number"] {
+            padding: 8px;
+            width: 10ch;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #007BFF;
+        }
+
+        /* Labels positioned next to inputs */
+        label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>
+            Area units converter
+        </h1>
+        <div class="container">
+            <form id="form-italian">
+                <div class="input-container">
+                    <input type="number" id="campi" name="campi">
+                    <label for="campi">Campi</label>
+                </div>
+                <div class="input-container">
+                    <input type="number" id="quarti" name="quarti">
+                    <label for="quarti">Quarti</label>
+                </div>
+                <div class="input-container">
+                    <input type="number" id="tavolle" name="tavolle">
+                    <label for="tavolle">Tavolle</label>
+                </div>
+            </form>
+            <form id="form-metric">
+                <div class="input-container">
+                    <input type="number" step="1" id="meterSq" name="meterSq">
+                    <label for="meterSq">m2</label>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        const inputCampi = document.getElementById('campi');
+        const inputQuarti = document.getElementById('quarti');
+        const inputTavolle = document.getElementById('tavolle');
+
+        const inputMeter = document.getElementById('meterSq');
+
+        const meterSqInCampo = 3656;
+        const meterSqInQuarto = 914;
+        const meterSqInTavolla = 4.3524;
+
+        const italianToMetric = function ({ campi, quarti, tavolle }) {
+            const meterSq = campi * meterSqInCampo +
+                quarti * meterSqInQuarto +
+                tavolle * meterSqInTavolla;
+
+            return ({ meterSq });
+        }
+
+        const metricToItalian = function ({ meterSq }) {
+            const campi = Math.floor(meterSq / meterSqInCampo);
+            meterSq -= campi * meterSqInCampo;
+            const quarti = Math.floor(meterSq / meterSqInQuarto);
+            meterSq -= quarti * meterSqInQuarto;
+            const tavolle = Math.floor(meterSq / meterSqInTavolla);
+
+            return { campi, quarti, tavolle };
+        }
+
+        document.querySelectorAll('form#form-italian input').forEach(
+            (element) => {
+                element.addEventListener('input', () => {
+                    const { meterSq } = italianToMetric({
+                        campi: parseFloat(inputCampi.value) || 0,
+                        quarti: parseFloat(inputQuarti.value) || 0,
+                        tavolle: parseFloat(inputTavolle.value) || 0
+                    });
+                    inputMeter.value = Math.floor(meterSq);
+                });
+            }
+        );
+
+        document.querySelectorAll('form#form-metric input').forEach(
+            (element) => {
+                element.addEventListener('input', () => {
+                    const { campi, quarti, tavolle } = metricToItalian({
+                        meterSq: parseFloat(inputMeter.value) || 0
+                    });
+
+                    inputCampi.value = campi;
+                    inputQuarti.value = quarti;
+                    inputTavolle.value = tavolle;
+                });
+            }
+        );
+    </script>
+</body>
+
+</html>
