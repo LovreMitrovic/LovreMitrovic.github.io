@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 
 <head>
     <meta charset="UTF-8">
@@ -7,33 +7,48 @@
     <title>Area units converter</title>
     <script>
         const inIframe = () => window.self !== window.top;
-        const head  = document.getElementsByTagName('head')[0];
-        const link  = document.createElement('link');
-        link.rel  = 'stylesheet';
-        link.type = 'text/css';
-        link.href = inIframe() ? '/embed/calculator/iframe.css' : '/embed/calculator/normal.css';
-        link.media = 'all';
-        head.appendChild(link);
+        const link  = inIframe() ? '/embed/calculator/iframe.css' : '/embed/calculator/normal.css';
+        document.write(`<link rel="stylesheet" type="text/css" href="${link}"></link>`);
     </script>
 </head>
 
 <body>
+    <section>
+        <h1>Konverter mjernih jedinica</h1>
+        <p>
+            Ovaj konverter mjernih jedinica razvijen
+            je kao pomoć u svrhu čitanja mletačkog
+            katastra Zadarskog okruga iz 1709. godine.
+            Mlečani su iskazivali površinu u kampima,
+            kvartima i tavolima.
+        </p>
+        <p>
+             Odnos tadašnjih
+            mjernih jedinica sa današnjim prenosim
+            iz knjige Slavka Ražova i Ante Milkovića
+            "Škabrnja gaj selo župa oćina, svezak I. 2023"
+        </p>
+        <ul>
+            <li>Padovanski kamp = 3656 m2</li>
+            <li>Padovanski kamp = 4 Kvarta</li>
+            <li>Kvarta = 914 m2</li>
+            <li>Kvarta = 210 Tavola</li>
+            <li>Tavola = 4,3524 m2</li>
+        </ul>
+    </section>
     <section id="section-converter">
-        <h1>
-            Area units converter
-        </h1>
         <div class="container">
             <form id="form-italian">
                 <div class="input-container">
-                    <input type="number" id="campi" name="campi">
+                    <input type="number" id="campi" name="campi" class="short">
                     <label for="campi">Campi</label>
                 </div>
                 <div class="input-container">
-                    <input type="number" id="quarti" name="quarti">
+                    <input type="number" id="quarti" name="quarti" class="short">
                     <label for="quarti">Quarti</label>
                 </div>
                 <div class="input-container">
-                    <input type="number" id="tavolle" name="tavolle">
+                    <input type="number" id="tavolle" name="tavolle" class="short">
                     <label for="tavolle">Tavolle</label>
                 </div>
             </form>
