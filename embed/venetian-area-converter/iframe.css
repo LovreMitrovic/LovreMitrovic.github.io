@@ -64,5 +64,5 @@ label {
 }
 
 .hidden-on-iframe {
-    display: hidden;
+    display: none;
 }
