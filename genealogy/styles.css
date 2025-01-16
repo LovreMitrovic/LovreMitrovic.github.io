@@ -1,0 +1,246 @@
+/* General styles */
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    background-color: #fdfdfd;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header container styles */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px 10%;
+    border-bottom: 5px solid #ccc;
+}
+
+/* The div that holds author info and navigation */
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Space between div and h1 */
+}
+
+header div p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+header div nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+header div nav ul li {
+    display: inline;
+}
+
+header div nav ul li a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+header div nav ul li a:hover {
+    color: #ff9900;
+    text-decoration: underline;
+}
+
+/* Heading and subheading styles */
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    text-align: center;
+}
+
+header p {
+    margin: 10px 0 0;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Navigation Bar Styles */
+header nav {
+    margin-top: 15px;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+header nav ul li a:hover {
+    color: #ff9900;
+    text-decoration: underline;
+}
+
+/* Section and Article styles */
+section {
+    margin: 20px 10%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+section h2 {
+    font-size: 1.8em;
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+article {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+article h2 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+article p {
+    margin-bottom: 10px;
+    text-indent: 20px;
+}
+
+article figure {
+    margin: 20px 0;
+    text-align: center;
+}
+
+article figcaption {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Quote styles */
+quote {
+    font-size: 0.95em;
+    color: #666;
+    font-style: italic;
+}
+
+/* Link styles */
+a {
+    color: #00509e;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Index styles */
+#section-index ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+#section-index ul li {
+    margin-bottom: 5px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px 10%;
+    margin-top: 30px;
+    border-top: 5px solid #ccc;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #aad4ff;
+    text-decoration: none;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 812px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    header div {
+        /*flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align left */
+    }
+
+    header div nav ul {
+        /*flex-direction: column; /* Stack nav items vertically */
+        gap: 10px;
+    }
+
+    header div nav ul li a {
+        font-size: 1.2em;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 1000px) {
+    body {
+        font-size: 1.5em;
+    }
+
+    header {
+        padding: 15px 5%;
+    }
+
+    section {
+        margin: 15px 5%;
+        padding: 15px;
+    }
+
+    article h2 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    section {
+        margin: 10px 5%;
+        padding: 10px;
+    }
+
+    article h2 {
+        font-size: 1.2em;
+    }
+}
