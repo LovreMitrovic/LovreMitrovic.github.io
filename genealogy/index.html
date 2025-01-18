@@ -6,32 +6,6 @@
   <link rel="stylesheet" href="/genealogy/styles.css">
 </head>
 <body>
-<script>
-  Object.defineProperty(String.prototype, 'capitalize', {
-    value: function() {
-      return this.charAt(0).toUpperCase() + this.slice(1);
-    },
-    enumerable: false
-  });
-
-  (async () => {
-    const response = await fetch('https://api.github.com/repos/LovreMitrovic/LovreMitrovic.github.io/contents/genealogy');
-    const data = await response.json();
-    const toIgnore = ["index.html","styles.css"]
-    let htmlString = '';
-    for (let file of data) {
-        if(file.name in toIgnore){
-            continue;
-        }
-      let path = file.path;
-      let name = file.name.replaceAll('-',' ');
-      name = name.capitalize()
-      htmlString += `<li><a href="/${path}"><h3>${name}</h3></a></li>`;
-    }
-
-    document.querySelector('#index').innerHTML = htmlString;
-  })()
-</script>
 <header>
   <div>
       <p>Autor: Lovre Mitrović</p>
@@ -44,10 +18,39 @@
   </div>
   <h1>Rodoslovlja</h1>
 </header>
-<section>
+<section id="section-menu">
   <ul id="index">
   </ul>
 </section>
+<script>
+  Object.defineProperty(String.prototype, 'capitalize', {
+    value: function() {
+      return this.charAt(0).toUpperCase() + this.slice(1);
+    },
+    enumerable: false
+  });
 
+  (async () => {
+    const response = await fetch('https://api.github.com/repos/LovreMitrovic/LovreMitrovic.github.io/contents/genealogy');
+    const data = await response.json();
+    const toIgnore = ["index.html","styles.css"]
+    for (let file of data) {
+        if(toIgnore.includes(file.name)){
+            continue;
+        }
+      const path = "/" + file.path;
+      const name = file.name.replaceAll('-',' ').capitalize();
+      const template = document.querySelector('#template-menu-bullet')
+      const bullet = document.importNode(template.content, true)
+      bullet.querySelector("a").setAttribute("href",path);
+      bullet.querySelector("h3").innerText = name;
+      document.querySelector('#index').appendChild(bullet);
+    }
+    
+  })()
+</script>
+<template id="template-menu-bullet">
+  <li><a><h3></h3></a></li>
+</template>
 <body>
 </html>
