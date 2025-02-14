@@ -1,27 +1,66 @@
+:root {
+    --main-color: #1a1a2e; /* Dark navy for main elements */
+    --bg-color: #121212; /* Dark background */
+    --border-color: #444; /* Darker border color */
+    --text-color: #e0e0e0; /* Light gray for text */
+    --title-color: #ffffff; /* Pure white for titles */
+    --nav-color: #ffd700; /* Bright gold for navigation links */
+    --nav-focus-color: #ff8c00; /* Orange for hover effects */
+    --section-bg-color: #1e1e2f; /* Slightly lighter dark background for sections */
+    --section-border-color: #555; /* Border for sections */
+    --quote-color: #999; /* Medium gray for quotes */
+    --link-color: #00bfff; /* Bright blue for links */
+    --footer-link-color: #87ceeb; /* Soft sky blue for footer links */
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --main-color: #003366;
+        --bg-color: #fdfdfd;
+        --border-color: #ccc;
+        --text-color: #333;
+        --title-color: white;
+        --nav-color: #ffcc00;
+        --nav-focus-color: #ff9900;
+        --section-bg-color: #f8f8f8;
+        --section-border-color: #ddd;
+        --quote-color: #666;
+        --link-color: #00509e;
+        --footer-link-color: #aad4ff;
+    }
+}
+
+
 /* General styles */
 body {
     font-family: 'Georgia', serif;
     line-height: 1.6;
-    background-color: #fdfdfd;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 /* Header container styles */
 header {
-    background-color: #003366;
-    color: white;
+    background-color: var(--main-color);
+    color: var(--title-color);
     padding: 20px 10%;
-    border-bottom: 5px solid #ccc;
+    border-bottom: 5px solid var(--border-color);
 }
 
-/* The div that holds author info and navigation */
 header div {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px; /* Space between div and h1 */
+    margin-bottom: 20px;
 }
 
 header div p {
@@ -30,29 +69,24 @@ header div p {
 }
 
 header div nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     gap: 20px;
 }
 
-header div nav ul li {
-    display: inline;
-}
-
 header div nav ul li a {
-    color: #ffcc00;
+    color: var(--nav-color);
     text-decoration: none;
     font-size: 1.1em;
 }
 
 header div nav ul li a:hover {
-    color: #ff9900;
+    color: var(--nav-focus-color);
     text-decoration: underline;
 }
 
-/* Heading and subheading styles */
 header h1 {
     font-size: 2.5em;
     margin: 0;
@@ -65,60 +99,23 @@ header p {
     font-style: italic;
 }
 
-/* Navigation Bar Styles */
-header nav {
-    margin-top: 15px;
-}
-
-header nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-}
-
-header nav ul li {
-    display: inline;
-}
-
-header nav ul li a {
-    color: #ffcc00;
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-header nav ul li a:hover {
-    color: #ff9900;
-    text-decoration: underline;
-}
-
 /* Section and Article styles */
 section {
     margin: 20px 10%;
     padding: 20px;
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
+    background-color: var(--section-bg-color);
+    border: 1px solid var(--section-border-color);
     border-radius: 8px;
 }
 
-section h2 {
-    font-size: 1.8em;
-    color: #003366;
-    margin-bottom: 15px;
+section h2, article h2 {
+    color: var(--title-color);
 }
 
 article {
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-article h2 {
-    font-size: 1.6em;
-    margin-bottom: 10px;
+    border-bottom: 1px solid var(--section-border-color);
 }
 
 article p {
@@ -136,16 +133,15 @@ article figcaption {
     margin-top: 10px;
 }
 
-/* Quote styles */
 quote {
     font-size: 0.95em;
-    color: #666;
+    color: var(--quote-color);
     font-style: italic;
 }
 
 /* Link styles */
 a {
-    color: #00509e;
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -153,37 +149,20 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Index styles */
-#section-index ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
-
-#section-index ul li {
-    margin-bottom: 5px;
-}
-
 /* Footer styles */
 footer {
-    background-color: #003366;
-    color: white;
+    background-color: var(--main-color);
+    color: var(--title-color);
     text-align: center;
     padding: 20px 10%;
     margin-top: 30px;
-    border-top: 5px solid #ccc;
-}
-
-footer p {
-    margin: 5px 0;
-    font-size: 0.9em;
+    border-top: 5px solid var(--border-color);
 }
 
 footer a {
-    color: #aad4ff;
+    color: var(--footer-link-color);
     text-decoration: none;
 }
-
-
 
 /* Responsive styles */
 @media (max-width: 812px) {
@@ -196,12 +175,10 @@ footer a {
     }
 
     header div {
-        /*flex-direction: column; /* Stack items vertically on smaller screens */
-        align-items: flex-start; /* Align left */
+        align-items: flex-start;
     }
 
     header div nav ul {
-        /*flex-direction: column; /* Stack nav items vertically */
         gap: 10px;
     }
 
@@ -210,7 +187,6 @@ footer a {
     }
 }
 
-/* Responsive styles */
 @media (max-width: 1000px) {
     body {
         font-size: 1.5em;
