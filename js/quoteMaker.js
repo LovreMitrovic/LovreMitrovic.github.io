@@ -13,12 +13,23 @@
 document.addEventListener("DOMContentLoaded", function(){
     let qQuotes = document.querySelectorAll('Quote');
     let olQuotes = document.querySelector('ol[quotes]');
+
     qQuotes.forEach((q) => {
         let idOfQuote = q.getAttribute('value');
+
+        if(!idOfQuote){
+            console.error(`[quoteMaker ERROR]: Quote element ${q.outerHTML} does not have value attribute.`);
+        }
+
         let listOfQuotes = Array.from(olQuotes.querySelectorAll('li'));
         let ordinalNum = listOfQuotes.map(
             (el) => el.getAttribute('id')
         ).indexOf(idOfQuote) + 1;
+
+        if(ordinalNum < 1) {
+            console.error(`[quoteMaker ERROR]: I could not find qoute in quotes list with id ${idOfQuote}`);
+        }
+
         let a = document.createElement('a')
         a.innerHTML = `[${ordinalNum}]`
         a.href = `#${idOfQuote}`

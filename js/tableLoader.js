@@ -30,16 +30,35 @@ async function loadContent(location) {
 	}
 }
 
+function parseLineCsv(line) {
+    const result = [];
+    let current = '';
+    let insideQuotes = false;
+
+    for (const char of line) {
+        if (char === '"') {
+            insideQuotes = !insideQuotes; // Toggle insideQuotes state
+        } else if (char === ',' && !insideQuotes) {
+            result.push(current.trim());
+            current = '';
+        } else {
+            current += char;
+        }
+    }
+    
+    result.push(current.trim()); // Push the last value
+    return result;
+}
 
 function parseCsv(csv) {
 	const lines = csv.split('\n');
-	const headers = lines[0].split(',');
+	const headers = parseLineCsv(lines[0]);
 
 	const jsonData = [];
 
 	for (let i = 1; i < lines.length; i++) {
 		if(lines[i] == '') continue;
-		const data = lines[i].split(',');
+		const data =  parseLineCsv(lines[i]);
 		const entry = {};
 
 		for (let j = 0; j < headers.length; j++) {
