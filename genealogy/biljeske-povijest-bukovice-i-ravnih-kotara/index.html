@@ -1,10 +1,13 @@
 <!doctype html>
 <html lang="hr">  
 <head>
-<title>Bilješke o povijesti Bukovice</title>
+<title>Bilješke o povijesti Bukovice i Ravnih kotara</title>
 <meta charset="UTF-8">
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="/genealogy/styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+<script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
 </head>
 
 <body>
@@ -18,12 +21,17 @@
             </ul>
         </nav>
     </div>
-    <h1>Bilješke o povijesti Bukovice</h1>
+    <h1>Bilješke o povijesti Bukovice i Ravnih Kotara</h1>
     <p>Zadnji put uređivano: 14/02/2025</p>
 </header>
 <main>
+    <section id="section-index">
+        <h2>Index</h2>
+        <ul id="ul-index" indexFor="section-posts">
+        </ul>
+    </section>
 <section id="section-posts">
-<article>
+<article id="kronologija">
     <h2>Kronologija</h2>
     <ul>
         <li>
@@ -214,6 +222,18 @@
 
 </article>
 <article>
+    <h2>Manje poznati popisi stanovništva</h2>
+    <p>
+        U Ninskim spisima koje je obradila Grozdana Franov Živković
+        nalazi se nekolicima raznih popisa uključujući
+        popise prikpljanja desetine, popise krizmanih, popise 
+        ispovijedanih i popise domaćinstva. U nastavku navodim
+        mjesta i vrijeme kada je napravljen popis. Ako vrijeme nije navedeno
+        radi se o kasnom 17. st. ili ranom 18. st.
+        <table src="./ninski-spisi-popisi.csv" id="ninski-spisi-popisi"></table>
+    </p>
+</article>
+<article id="bibliografija">
     <h2>Bibliografija</h2>
     <ol quotes>
         <li id="q-buzov">
@@ -257,4 +277,6 @@
     <p>&copy; 2025 Lovre Mitrović</p>
 </footer>
 <script src="/js/quoteMaker.js"></script>
+<script src="/js/indexMaker.js"></script>
+<script src="/js/tableLoader.js"></script>
 </body>
