@@ -49,14 +49,7 @@ function showResults(results){
     const ul = document.querySelector("ul#index")
     results.forEach(result => {
         const li = document.createElement('li');
-        const a = document.createElement('a');
-        const p = document.createElement('p')
-        a.href = result.url;
-        a.innerText = result.title;
-        //p.innerHTML = result.preview;
-        
-        li.appendChild(a);
-        li.appendChild(p);
+        li.innerHTML = `<a href="${result.url}"><h3>${result.title}</h3></a>`;
         ul.appendChild(li);
     });
 }
