@@ -194,6 +194,7 @@ footer a {
 /*Form stying*/
 .search-form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px; /* Space between input and button */
@@ -204,7 +205,17 @@ footer a {
   }
   
   /* Style the input field */
-  .search-form input[type="text"] {
+  .search-form input[type="text"],
+  .search-form input[type="email"]{
+    flex: 1; /* Allows input to expand */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    min-width: 200px;
+  }
+
+  .search-form textarea{
     flex: 1; /* Allows input to expand */
     padding: 10px;
     font-size: 16px;
