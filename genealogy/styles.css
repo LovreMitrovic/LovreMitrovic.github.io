@@ -192,21 +192,27 @@ footer a {
 }
 
 /*Form stying*/
-.search-form {
+form {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 10px; /* Space between input and button */
     flex-wrap: wrap; /* Ensures responsiveness */
     max-width: 500px;
     margin: 0 auto;
     padding: 10px;
   }
+
+  .contact-form {
+    align-items: center;
+  }
+
+.contact-form {
+    flex-direction: column;
+}
   
   /* Style the input field */
-  .search-form input[type="text"],
-  .search-form input[type="email"]{
+  form input[type="text"],
+  form input[type="email"]{
     flex: 1; /* Allows input to expand */
     padding: 10px;
     font-size: 16px;
@@ -215,7 +221,7 @@ footer a {
     min-width: 200px;
   }
 
-  .search-form textarea{
+  form textarea{
     flex: 1; /* Allows input to expand */
     padding: 10px;
     font-size: 16px;
@@ -225,7 +231,7 @@ footer a {
   }
   
   /* Style the submit button */
-  .search-form input[type="submit"] {
+  form input[type="submit"] {
     background-color: #007bff;
     color: white;
     border: none;
@@ -235,7 +241,7 @@ footer a {
     cursor: pointer;
   }
   
-  .search-form input[type="submit"]:hover {
+  form input[type="submit"]:hover {
     background-color: #0056b3;
   }
   
