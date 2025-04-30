@@ -218,7 +218,7 @@ form {
     font-size: 16px;
     border: 2px solid #ccc;
     border-radius: 5px;
-    min-width: 200px;
+    min-width: 300px;
   }
 
   form textarea{
@@ -227,7 +227,7 @@ form {
     font-size: 16px;
     border: 2px solid #ccc;
     border-radius: 5px;
-    min-width: 200px;
+    min-width: 300px;
   }
   
   /* Style the submit button */
