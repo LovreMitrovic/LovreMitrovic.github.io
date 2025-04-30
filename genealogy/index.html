@@ -23,6 +23,7 @@
 </header>
 <main>
   <section id="section-menu">
+    <h2>Popis članaka</h2>
     <ul id="index">
     
       <li><a href="/genealogy/burculi-u-povijesnim-izvorima"><h3>📜 Burčuli u povijesnim izvorima</h3></a></li>
@@ -40,6 +41,14 @@
       
     </ul>
   </section>
+  <section>
+    <h2>Korisni linkovi</h2>
+    <ul>
+      <li><a href="https://blaga.hr/lokacije-utvrda-gradina-i-dvoraca-u-hrvatskoj/">
+        🏰 Lokacije utvrda
+      </a></li>
+    </ul>
+  </section>
 </main>
 <aside>
   <section>
@@ -53,36 +62,5 @@
 <footer>
   <p>&copy; 2025 Lovre Mitrović</p>
 </footer>
-<!--
-<script>
-  Object.defineProperty(String.prototype, 'capitalize', {
-    value: function() {
-      return this.charAt(0).toUpperCase() + this.slice(1);
-    },
-    enumerable: false
-  });
-
-  (async () => {
-    const response = await fetch('https://api.github.com/repos/LovreMitrovic/LovreMitrovic.github.io/contents/genealogy');
-    const data = await response.json();
-    const toIgnore = ["index.html","styles.css"]
-    for (let file of data) {
-        if(toIgnore.includes(file.name)){
-            continue;
-        }
-      const path = "/" + file.path;
-      const name = file.name.replaceAll('-',' ').capitalize();
-      const template = document.querySelector('#template-menu-bullet')
-      const bullet = document.importNode(template.content, true)
-      bullet.querySelector("a").setAttribute("href",path);
-      bullet.querySelector("h3").innerText = name;
-      document.querySelector('#index').appendChild(bullet);
-    }
-    
-  })()
-</script>
-<template id="template-menu-bullet">
-  <li><a><h3></h3></a></li>
-</template>-->
 <body>
 </html>
