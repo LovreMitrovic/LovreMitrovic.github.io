@@ -209,6 +209,11 @@ form {
 .contact-form {
     flex-direction: column;
 }
+
+.contact-form textarea,
+.contact-form input[type="text"] {
+    width: 100%;
+}
   
   /* Style the input field */
   form input[type="text"],
@@ -218,7 +223,6 @@ form {
     font-size: 16px;
     border: 2px solid #ccc;
     border-radius: 5px;
-    min-width: 300px;
   }
 
   form textarea{
@@ -227,7 +231,6 @@ form {
     font-size: 16px;
     border: 2px solid #ccc;
     border-radius: 5px;
-    min-width: 300px;
   }
   
   /* Style the submit button */
