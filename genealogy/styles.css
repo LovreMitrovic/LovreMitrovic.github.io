@@ -137,6 +137,8 @@ section {
 .menu-list > li {
     font-size: 1.2em;
     font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 section h2, article h2 {
