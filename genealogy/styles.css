@@ -134,7 +134,7 @@ section {
     border-radius: 8px;
 }
 
-section.section-menu > li {
+.menu-list > li {
     font-size: 1.2em;
     font-weight: bold;
 }
