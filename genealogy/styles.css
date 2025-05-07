@@ -211,14 +211,11 @@ form {
 
   .contact-form {
     align-items: center;
-  }
-
-.contact-form {
     flex-direction: column;
 }
 
-.contact-form textarea,
-.contact-form input[type="text"] {
+.contact-form > textarea,
+.contact-form > input[type="text"] {
     width: 100%;
 }
   
