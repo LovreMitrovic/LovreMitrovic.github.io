@@ -141,10 +141,6 @@ section {
     margin-bottom: 1em;
 }
 
-section h2, article h2 {
-    color: var(--title-color);
-}
-
 article {
     margin-bottom: 30px;
     padding-bottom: 20px;
