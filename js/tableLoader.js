@@ -28,6 +28,8 @@
 
 */
 
+const dataTables = []
+
 async function loadContent(location) {
 	try {
 		const absoluteURL = new URL(location, window.location.href).toString();
@@ -109,6 +111,7 @@ function populateHtml(){
 				}
 			}
 		);
+		dataTables.push(dataTable)
 	})
 }
 
