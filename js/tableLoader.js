@@ -101,16 +101,44 @@ function populateHtml(){
 		let id = table.getAttribute('id');
 		let content = await loadContent(src);
 		content = parseCsv(content);
-		let dataTable = new DataTable(`#${id}`,{
-				data: content.data,
-				columns: content.columns,
-				layout: {
-					topStart: {
-						buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
-					}
-				}
-			}
-		);
+let dataTable = new DataTable(`#${id}`, {
+    data: content.data,
+    columns: content.columns,
+    layout: {
+        topStart: {
+            buttons: [
+                'copy',
+                'csv',
+                'excel',
+                {
+                    extend: 'pdf',
+                    customize: function (doc) {
+                        // Add subtitle
+						/*
+                        doc.content.splice(1, 0, {
+                            text: 'Custom Subtitle Goes Here',
+                            margin: [0, 0, 0, 12],
+                            alignment: 'center',
+                            fontSize: 12,
+                            bold: true
+                        });*/
+
+                        // Add footer on each page
+                        doc.footer = function(currentPage, pageCount) {
+                            return {
+                                columns: [
+                                    { text: window.location.href, alignment: 'left', margin: [40, 0, 0, 0] },
+                                    { text: 'Page ' + currentPage + ' of ' + pageCount, alignment: 'right', margin: [0, 0, 40, 0] }
+                                ],
+                                margin: [0, 0, 0, 20]
+                            };
+                        };
+                    }
+                }
+            ]
+        }
+    }
+});
 		dataTables.push(dataTable)
 	})
 }
