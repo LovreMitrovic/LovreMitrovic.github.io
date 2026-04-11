@@ -136,14 +136,14 @@ function populateHtml(){
 							extend: 'pdf',
 							customize: function (doc) {
 								// Add subtitle
-								/*
+								
 								doc.content.splice(1, 0, {
-									text: 'Custom Subtitle Goes Here',
+									text: src,
 									margin: [0, 0, 0, 12],
 									alignment: 'center',
 									fontSize: 12,
 									bold: true
-								});*/
+								});
 
 								// Add footer on each page
 								doc.footer = function(currentPage, pageCount) {
